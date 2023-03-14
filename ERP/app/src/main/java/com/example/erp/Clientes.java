@@ -11,8 +11,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -40,9 +44,40 @@ public class Clientes extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        TextView mostrar_id = findViewById(R.id.mostrar_id);
+        TextView mostrar_nombre = findViewById(R.id.mostrar_nombre);
+        TextView mostrar_apellidos = findViewById(R.id.mostrar_apellidos);
+        TextView mostrar_fnacim = findViewById(R.id.mostrar_fnacim);
+        TextView mostrar_telefono = findViewById(R.id.mostrar_telefono);
+        TextView mostrar_email = findViewById(R.id.mostrar_email);
+
         // Obtenemos los clientes de la base de datos y los guardamos en el ArrayList
         clientes = new ArrayList<>();
         getClientes();
+
+        // Obtenemos el id introducido y buscamos en el ArrayList
+         EditText input_id = findViewById(R.id.input_id);
+         ImageView buscar = findViewById(R.id.buscar);
+         buscar.setOnClickListener(v -> {
+            int aux = Integer.parseInt(input_id.getText().toString());
+            for (int i = 0; i < clientes.size(); i++) {
+                if(clientes.get(i).getId() == (i + 1)) {
+                    mostrar_id.setText(String.valueOf(clientes.get(i).getId()));
+                    mostrar_nombre.setText(clientes.get(i).getNombre());
+                    mostrar_apellidos.setText(clientes.get(i).getApellidos());
+                    mostrar_fnacim.setText(clientes.get(i).getFecha_nacimiento());
+                    mostrar_telefono.setText(String.valueOf(clientes.get(i).getTelefono()));
+                    mostrar_email.setText(clientes.get(i).getEmail());
+                }
+            }
+         });
+
+         FloatingActionButton adelante = findViewById(R.id.floatingActionButton);
+
+         adelante.setOnClickListener(v -> {
+             Intent i = new Intent(Clientes.this, AnhadirCliente.class);
+             startActivity(i);
+         });
 
         // Controlamos el menu lateral
         navigationView = findViewById(R.id.navigationView);
@@ -93,7 +128,7 @@ public class Clientes extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Metodo para obtener los clientes de la base de datos
+    // Metodo que usaremos para obtener los clientes de la base de datos
     public void getClientes() {
         bd = admin.getReadableDatabase();
         Cursor c = bd.rawQuery("Select * from clientes", null);
