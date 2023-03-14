@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/contabilidad"
+        android:id="@+id/contabilidad" />
+
+    <item android:title="@string/clientes"
+        android:id="@+id/clientes" />
+
+    <item android:title="@string/proveedores"
+        android:id="@+id/proveedores" />
+
+    <item android:title="@string/correo_masivo"
+        android:id="@+id/correo_masivo" />
+
+    <item android:title="@string/rrhh"
+        android:id="@+id/RRHH" />
+
+    <item android:title="@string/ajustes"
+        android:id="@+id/ajustes" />
+</menu>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ERP</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="clientes">Clientes</string>
+    <string name="contabilidad">Contabilidad</string>
+    <string name="correo_masivo">Correo Masivo</string>
+    <string name="proveedores">Proveedores</string>
+    <string name="rrhh">RRHH</string>
+    <string name="introduzca_el_id">Introduzca el id</string>
+    <string name="buscar_por_id">Buscar por id:</string>
+    <string name="todo">TODO</string>
+    <string name="apellidos">Apellidos:</string>
+    <string name="email">Email:</string>
+    <string name="id">ID:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento:</string>
+</resources>
