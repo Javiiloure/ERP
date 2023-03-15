@@ -19,4 +19,9 @@
     <string name="fecha_de_nacimiento">Fecha de nacimiento:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="introduzca_su_fecha_de_nacimiento">Introduzca su fecha de nacimiento</string>
+    <string name="introduzca_sus_apellidos">Introduzca sus apellidos</string>
+    <string name="introduzca_su_email">Introduzca su email</string>
+    <string name="introduzca_su_telefono">Introduzca su telefono</string>
+    <string name="introduzca_su_nombre">Introduzca su nombre</string>
 </resources>
