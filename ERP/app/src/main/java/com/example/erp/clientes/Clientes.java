@@ -31,7 +31,7 @@ public class Clientes extends AppCompatActivity {
     protected static SQLiteDatabase bd;
     protected static final String nombreBD = "ERP";
     protected final AdminBD admin = new AdminBD(Clientes.this, nombreBD, null, 1);
-    public ArrayList<Cliente> clientes;
+    public static ArrayList<Cliente> clientes;
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     public NavigationView navigationView;
@@ -136,7 +136,7 @@ public class Clientes extends AppCompatActivity {
     }
 
     public void añadirCliente(){
-        AnhadirCliente aux = new AnhadirCliente();
+        AnhadirCliente aux = new AnhadirCliente(Clientes.this);
         aux.show(getSupportFragmentManager(), "Añadir cliente");
     }
 

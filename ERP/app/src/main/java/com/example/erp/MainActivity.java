@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected SQLiteDatabase bd;
     protected static final String nombreBD = "ERP";
-    protected final AdminBD admin = new AdminBD(MainActivity.this, nombreBD, null, 1);
+    public final AdminBD admin = new AdminBD(MainActivity.this, nombreBD, null, 1);
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     public NavigationView navigationView;
