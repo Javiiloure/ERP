@@ -73,13 +73,14 @@
             tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/atras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="200dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/atras"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+            app:layout_constraintEnd_toStartOf="@+id/adelante"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email"
@@ -87,7 +88,7 @@
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/adelante"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"

@@ -9,12 +9,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.erp.AdminBD;
-import com.example.erp.MainActivity;
 import com.example.erp.R;
 
 // https://www.youtube.com/watch?v=dxIV_25Nb-Q&ab_channel=CursosAndroidANT
@@ -24,17 +24,17 @@ public class AnhadirCliente extends AppCompatDialogFragment {
     private Context context;
     protected SQLiteDatabase bd;
     protected static final String nombreBD = "ERP";
-    public AdminBD admin = new AdminBD(context, nombreBD, null, 1);
+    public AdminBD admin;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        admin = new AdminBD(this.context, nombreBD, null, 1);
-
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.anhadir_cliente, null);
+        View view = inflater.inflate(R.layout.gestionar_cliente, null);
+
+        admin = new AdminBD(context, nombreBD, null, 1);
 
         EditText input_nombre = view.findViewById(R.id.input_nombre);
         EditText input_apellidos = view.findViewById(R.id.input_apellidos);
@@ -43,10 +43,7 @@ public class AnhadirCliente extends AppCompatDialogFragment {
         EditText input_email = view.findViewById(R.id.input_email);
 
         builder.setView(view).setTitle("Añadir cliente").setNegativeButton("Cancelar", (dialog, which) -> {
-
-
-
-
+            Toast.makeText(context, "Cancelado", Toast.LENGTH_LONG).show();
         }).setPositiveButton("Guardar", (dialog, which) -> {
 
             // Obtenemos el id del ultimo cliente y lo incrementamos en 1
@@ -76,6 +73,8 @@ public class AnhadirCliente extends AppCompatDialogFragment {
            cv.put("email", email);
            bd.insert("Clientes", null, cv);
            bd.close();
+
+           Toast.makeText(context, "Cliente agregado", Toast.LENGTH_LONG).show();
         });
         return builder.create();
     }

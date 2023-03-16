@@ -13,12 +13,13 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.erp.AdminBD;
 import com.example.erp.Ajustes;
 import com.example.erp.Contabilidad;
 import com.example.erp.CorreoMasivo;
-import com.example.erp.Proveedores;
+import com.example.erp.proveedores.Proveedores;
 import com.example.erp.R;
 import com.example.erp.RRHH;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,6 +36,14 @@ public class Clientes extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     public NavigationView navigationView;
+    final int[] count = {0};
+    private TextView mostrar_id;
+    private TextView mostrar_nombre;
+    private TextView mostrar_apellidos;
+    private TextView mostrar_fnacim;
+    private TextView mostrar_telefono;
+    private TextView mostrar_email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +52,18 @@ public class Clientes extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView mostrar_id = findViewById(R.id.mostrar_id);
-        TextView mostrar_nombre = findViewById(R.id.mostrar_nombre);
-        TextView mostrar_apellidos = findViewById(R.id.mostrar_apellidos);
-        TextView mostrar_fnacim = findViewById(R.id.mostrar_fnacim);
-        TextView mostrar_telefono = findViewById(R.id.mostrar_telefono);
-        TextView mostrar_email = findViewById(R.id.mostrar_email);
+        // Enlazamos los TextView para mostrar los datos
+        mostrar_id = findViewById(R.id.mostrar_id);
+        mostrar_nombre = findViewById(R.id.mostrar_nombre);
+        mostrar_apellidos = findViewById(R.id.mostrar_apellidos);
+        mostrar_fnacim = findViewById(R.id.mostrar_fnacim);
+        mostrar_telefono = findViewById(R.id.mostrar_telefono);
+        mostrar_email = findViewById(R.id.mostrar_email);
 
         // Obtenemos los clientes de la base de datos y los guardamos en el ArrayList
         clientes = new ArrayList<>();
@@ -77,11 +86,42 @@ public class Clientes extends AppCompatActivity {
             }
          });
 
-         FloatingActionButton adelante = findViewById(R.id.floatingActionButton);
+         // Botones para avanzar o retroceder entre los clientes
+         FloatingActionButton adelante = findViewById(R.id.adelante);
+         FloatingActionButton atras = findViewById(R.id.atras);
 
-         adelante.setOnClickListener(v -> {
+        adelante.setOnClickListener(v -> {
+            if(count[0] == clientes.size() -  1) return;
+            else {
+                count[0]++;
+                mostrar_id.setText(String.valueOf(clientes.get(count[0]).getId()));
+                mostrar_nombre.setText(clientes.get(count[0]).getNombre());
+                mostrar_apellidos.setText(clientes.get(count[0]).getApellidos());
+                mostrar_fnacim.setText(clientes.get(count[0]).getFecha_nacimiento());
+                mostrar_telefono.setText(String.valueOf(clientes.get(count[0]).getTelefono()));
+                mostrar_email.setText(clientes.get(count[0]).getEmail());
+            }
+        });
+        atras.setOnClickListener(v -> {
+            if (count[0] == 0) return;
+            else{
+                count[0]--;
+                mostrar_id.setText(String.valueOf(clientes.get(count[0]).getId()));
+                mostrar_nombre.setText(clientes.get(count[0]).getNombre());
+                mostrar_apellidos.setText(clientes.get(count[0]).getApellidos());
+                mostrar_fnacim.setText(clientes.get(count[0]).getFecha_nacimiento());
+                mostrar_telefono.setText(String.valueOf(clientes.get(count[0]).getTelefono()));
+                mostrar_email.setText(clientes.get(count[0]).getEmail());
+            }
+        });
 
-         });
+         // Rellenamos los datos con el primer cliente del arraylist
+        mostrar_id.setText(String.valueOf(clientes.get(count[0]).getId()));
+        mostrar_nombre.setText(clientes.get(count[0]).getNombre());
+        mostrar_apellidos.setText(clientes.get(count[0]).getApellidos());
+        mostrar_fnacim.setText(clientes.get(count[0]).getFecha_nacimiento());
+        mostrar_telefono.setText(String.valueOf(clientes.get(count[0]).getTelefono()));
+        mostrar_email.setText(clientes.get(count[0]).getEmail());
 
         // Controlamos el menu lateral
         navigationView = findViewById(R.id.navigationView);
@@ -124,6 +164,7 @@ public class Clientes extends AppCompatActivity {
     }
 
     // Metodo que usaremos para obtener los clientes de la base de datos
+    // y guardarlos en el ArrayList
     public void getClientes() {
         bd = admin.getReadableDatabase();
         Cursor c = bd.rawQuery("Select * from clientes", null);
@@ -135,9 +176,37 @@ public class Clientes extends AppCompatActivity {
         c.close();
     }
 
+    // Metodo para añadir clientes
     public void añadirCliente(){
         AnhadirCliente aux = new AnhadirCliente(Clientes.this);
         aux.show(getSupportFragmentManager(), "Añadir cliente");
+    }
+
+    // Metodo para modificar clientes
+    public void modificarCliente(){
+        ModificarCliente aux = new ModificarCliente(Clientes.this, clientes.get(count[0]).getId());
+        aux.show(getSupportFragmentManager(), "Modificar cliente");
+    }
+
+    // Metodo para eliminar clientes
+    public void eliminarCliente(){
+
+        // Eliminamos el cliente de la base de datos
+        bd = admin.getWritableDatabase();
+        bd.delete("clientes", "id = ?", new String[]{String.valueOf(clientes.get(count[0]).getId())});
+        bd.close();
+
+        // Eliminamos el cliente del ArrayList
+        clientes.remove(count[0]);
+        Toast.makeText(this, "Cliente eliminado correctamente", Toast.LENGTH_SHORT).show();
+
+        // Borramos los datos de la interfaz
+        mostrar_id.setText("");
+        mostrar_nombre.setText("");
+        mostrar_apellidos.setText("");
+        mostrar_fnacim.setText("");
+        mostrar_telefono.setText("");
+        mostrar_email.setText("");
     }
 
     // Cargamos el menu de los clientes
@@ -153,7 +222,11 @@ public class Clientes extends AppCompatActivity {
             case R.id.anhadir_cliente:
                 añadirCliente();
                 break;
+            case R.id.modificar_cliente:
+                modificarCliente();
+                break;
             case R.id.eliminar_cliente:
+                eliminarCliente();
                 break;
         }
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {

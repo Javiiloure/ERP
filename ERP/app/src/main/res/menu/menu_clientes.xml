@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/anhadir_cliente"
-        android:title="Añadir Cliente" />
+        android:title="@string/a_adir_cliente" />
+    <item android:id="@+id/modificar_cliente"
+        android:title="@string/modificar_cliente" />
     <item android:id="@+id/eliminar_cliente"
-        android:title="Eliminar Cliente" />
+        android:title="@string/eliminar_cliente" />
 </menu>

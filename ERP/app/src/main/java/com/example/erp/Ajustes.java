@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.erp.clientes.Clientes;
+import com.example.erp.proveedores.Proveedores;
 import com.google.android.material.navigation.NavigationView;
 
 public class Ajustes extends AppCompatActivity {

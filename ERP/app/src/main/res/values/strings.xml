@@ -24,4 +24,10 @@
     <string name="introduzca_su_email">Introduzca su email</string>
     <string name="introduzca_su_telefono">Introduzca su telefono</string>
     <string name="introduzca_su_nombre">Introduzca su nombre</string>
+    <string name="a_adir_cliente">Añadir Cliente</string>
+    <string name="modificar_cliente">Modificar Cliente</string>
+    <string name="eliminar_cliente">Eliminar Cliente</string>
+    <string name="a_adir_proveedor">Añadir Proveedor</string>
+    <string name="modificar_proveedor">Modificar Proveedor</string>
+    <string name="eliminar_proveedor">Eliminar Proveedor</string>
 </resources>
