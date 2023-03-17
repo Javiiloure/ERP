@@ -69,6 +69,16 @@ public class Clientes extends AppCompatActivity {
         clientes = new ArrayList<>();
         getClientes();
 
+        // Rellenamos los datos con el primer cliente del arraylist si no esta vacio
+        if(clientes.size() > 0) {
+            mostrar_id.setText(String.valueOf(clientes.get(count[0]).getId()));
+            mostrar_nombre.setText(clientes.get(count[0]).getNombre());
+            mostrar_apellidos.setText(clientes.get(count[0]).getApellidos());
+            mostrar_fnacim.setText(clientes.get(count[0]).getFecha_nacimiento());
+            mostrar_telefono.setText(String.valueOf(clientes.get(count[0]).getTelefono()));
+            mostrar_email.setText(clientes.get(count[0]).getEmail());
+        }
+
         // Obtenemos el id introducido y buscamos en el ArrayList
          EditText input_id = findViewById(R.id.input_id);
          ImageView buscar = findViewById(R.id.buscar);
@@ -114,14 +124,6 @@ public class Clientes extends AppCompatActivity {
                 mostrar_email.setText(clientes.get(count[0]).getEmail());
             }
         });
-
-         // Rellenamos los datos con el primer cliente del arraylist
-        mostrar_id.setText(String.valueOf(clientes.get(count[0]).getId()));
-        mostrar_nombre.setText(clientes.get(count[0]).getNombre());
-        mostrar_apellidos.setText(clientes.get(count[0]).getApellidos());
-        mostrar_fnacim.setText(clientes.get(count[0]).getFecha_nacimiento());
-        mostrar_telefono.setText(String.valueOf(clientes.get(count[0]).getTelefono()));
-        mostrar_email.setText(clientes.get(count[0]).getEmail());
 
         // Controlamos el menu lateral
         navigationView = findViewById(R.id.navigationView);
@@ -216,6 +218,7 @@ public class Clientes extends AppCompatActivity {
         return true;
     }
 
+    // Controlamos el menu de clientes
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){

@@ -83,7 +83,7 @@
             app:layout_constraintEnd_toStartOf="@+id/adelante"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/servicio"
             app:layout_constraintVertical_bias="0.838"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
 
@@ -97,12 +97,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.87"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/servicio"
             app:layout_constraintVertical_bias="0.838"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -114,7 +114,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/servicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -122,10 +122,10 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/telefono" />
+            app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
         <TextView
-            android:id="@+id/telefono"
+            android:id="@+id/direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -134,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fecha_nacimiento" />
+            app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <TextView
             android:id="@+id/id"
@@ -162,7 +162,7 @@
             app:layout_constraintTop_toBottomOf="@+id/id" />
 
         <TextView
-            android:id="@+id/fecha_nacimiento"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
@@ -171,7 +171,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.213"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/telefono" />
 
         <View
             android:id="@+id/divider"
@@ -219,7 +219,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.165"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/telefono"
             app:layout_constraintTop_toBottomOf="@+id/mostrar_nombre" />
 
         <TextView
@@ -231,7 +231,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.609"
-            app:layout_constraintStart_toEndOf="@+id/fecha_nacimiento"
+            app:layout_constraintStart_toEndOf="@+id/email"
             app:layout_constraintTop_toBottomOf="@+id/mostrar_apellidos" />
 
         <TextView
@@ -243,7 +243,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.22"
-            app:layout_constraintStart_toEndOf="@+id/telefono"
+            app:layout_constraintStart_toEndOf="@+id/direccion"
             app:layout_constraintTop_toBottomOf="@+id/mostrar_fnacim" />
 
         <TextView
@@ -256,7 +256,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/servicio"
             app:layout_constraintVertical_bias="0.171" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
