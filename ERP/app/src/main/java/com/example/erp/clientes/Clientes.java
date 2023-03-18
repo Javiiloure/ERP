@@ -92,14 +92,14 @@ public class Clientes extends AppCompatActivity {
                     mostrar_fnacim.setText(clientes.get(i).getFecha_nacimiento());
                     mostrar_telefono.setText(String.valueOf(clientes.get(i).getTelefono()));
                     mostrar_email.setText(clientes.get(i).getEmail());
+                    count[0] = i;
                 }
             }
          });
 
          // Botones para avanzar o retroceder entre los clientes
-         FloatingActionButton adelante = findViewById(R.id.adelante);
-         FloatingActionButton atras = findViewById(R.id.atras);
-
+        FloatingActionButton adelante = findViewById(R.id.adelante);
+        FloatingActionButton atras = findViewById(R.id.atras);
         adelante.setOnClickListener(v -> {
             if(count[0] == clientes.size() -  1) return;
             else {

@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import com.example.erp.AdminBD;
 import com.example.erp.R;
 
-// https://www.youtube.com/watch?v=dxIV_25Nb-Q&ab_channel=CursosAndroidANT
 
 public class AnhadirCliente extends AppCompatDialogFragment {
 
