@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,7 +22,6 @@ import com.example.erp.Contabilidad;
 import com.example.erp.CorreoMasivo;
 import com.example.erp.proveedores.Proveedores;
 import com.example.erp.R;
-import com.example.erp.RRHH;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -45,6 +45,7 @@ public class Clientes extends AppCompatActivity {
     private TextView mostrar_email;
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,11 +152,6 @@ public class Clientes extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     break;
-                case R.id.RRHH:
-                    intent = new Intent(Clientes.this, RRHH.class);
-                    startActivity(intent);
-                    finish();
-                    break;
                 case R.id.ajustes:
                     intent = new Intent(Clientes.this, Ajustes.class);
                     startActivity(intent);
@@ -179,6 +175,7 @@ public class Clientes extends AppCompatActivity {
     }
 
     // Metodo para añadir clientes
+    @SuppressWarnings("NonAsciiCharacters")
     public void añadirCliente(){
         AnhadirCliente aux = new AnhadirCliente(Clientes.this);
         aux.show(getSupportFragmentManager(), "Añadir cliente");
@@ -219,6 +216,7 @@ public class Clientes extends AppCompatActivity {
     }
 
     // Controlamos el menu de clientes
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){

@@ -11,11 +11,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.erp.AdminBD;
 import com.example.erp.R;
-import com.example.erp.clientes.Clientes;
 
 public class ModificarProveedor extends AppCompatDialogFragment {
 
@@ -26,6 +26,7 @@ public class ModificarProveedor extends AppCompatDialogFragment {
     protected static final String nombreBD = "ERP";
     public AdminBD admin;
 
+    @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -61,7 +62,7 @@ public class ModificarProveedor extends AppCompatDialogFragment {
         }).setPositiveButton("Guardar", (dialog, which) -> {
 
             String nombre = input_nombre.getText().toString();
-            int telefono = Integer.valueOf(input_telefono.getText().toString());
+            int telefono = Integer.parseInt(input_telefono.getText().toString());
             String email = input_email.getText().toString();
             String direccion = input_direccion.getText().toString();
             String servicio = input_servicio.getText().toString();

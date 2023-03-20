@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.example.erp.AdminBD;
@@ -25,6 +26,7 @@ public class ModificarCliente extends AppCompatDialogFragment {
     protected static final String nombreBD = "ERP";
     public AdminBD admin;
 
+    @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -61,7 +63,7 @@ public class ModificarCliente extends AppCompatDialogFragment {
             String nombre = input_nombre.getText().toString();
             String apellidos = input_apellidos.getText().toString();
             String fnacim = input_fnacim.getText().toString();
-            int telefono = Integer.valueOf(input_telefono.getText().toString());
+            int telefono = Integer.parseInt(input_telefono.getText().toString());
             String email = input_email.getText().toString();
 
             // Modificamos el cliente en el ArrayList

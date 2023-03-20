@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,7 +21,6 @@ import com.example.erp.Ajustes;
 import com.example.erp.Contabilidad;
 import com.example.erp.CorreoMasivo;
 import com.example.erp.R;
-import com.example.erp.RRHH;
 import com.example.erp.clientes.Clientes;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -46,6 +46,7 @@ public class Proveedores extends AppCompatActivity {
     TextView mostrar_direccion;
     TextView mostrar_servicio;
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,11 +153,6 @@ public class Proveedores extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     break;
-                case R.id.RRHH:
-                    intent = new Intent(Proveedores.this, RRHH.class);
-                    startActivity(intent);
-                    finish();
-                    break;
                 case R.id.ajustes:
                     intent = new Intent(Proveedores.this, Ajustes.class);
                     startActivity(intent);
@@ -166,6 +162,7 @@ public class Proveedores extends AppCompatActivity {
         });
     }
 
+    @SuppressWarnings("NonAsciiCharacters")
     public void añadirProveedor(){
         AnhadirProveedor aux = new AnhadirProveedor(Proveedores.this);
         aux.show(getSupportFragmentManager(), "Añadir Proveedor");
@@ -215,6 +212,7 @@ public class Proveedores extends AppCompatActivity {
     }
 
     // Controlamos el menu de proveedores
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){

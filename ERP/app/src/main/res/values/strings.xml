@@ -37,4 +37,13 @@
     <string name="introduzca_el_email">Introduzca el email</string>
     <string name="introduzca_la_direccion">Introduzca la direccion</string>
     <string name="introduzca_el_servicio">Introduzca el servicio</string>
+    <string name="escriba_el_mensaje">Escriba el mensaje</string>
+    <string name="suspension">...</string>
+    <string name="asunto">Asunto:</string>
+    <string name="enviar_a">Enviar a :</string>
+    <string name="empleados">Empleados</string>
+    <string name="enviar">Enviar</string>
+    <string name="clientes_activos">Clientes activos:</string>
+    <string name="_29_90">29.90€</string>
+    <string name="cuota_mensual">Cuota mensual:</string>
 </resources>

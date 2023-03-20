@@ -58,11 +58,6 @@ public class Ajustes extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     break;
-                case R.id.RRHH:
-                    intent = new Intent(Ajustes.this, RRHH.class);
-                    startActivity(intent);
-                    finish();
-                    break;
                 case R.id.ajustes:
                     intent = new Intent(Ajustes.this, Ajustes.class);
                     startActivity(intent);

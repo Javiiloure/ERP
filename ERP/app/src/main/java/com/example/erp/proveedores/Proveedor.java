@@ -9,15 +9,6 @@ public class Proveedor {
     String direccion;
     String servicio;
 
-    public Proveedor(){
-        this.id = 0;
-        this.nombre = "";
-        this.telefono = 0;
-        this.email = "";
-        this.direccion = "";
-        this.servicio = "";
-    }
-
     public Proveedor(int id, String nombre, int telefono, String email, String direccion, String servicio) {
         this.id = id;
         this.nombre = nombre;

@@ -62,11 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                     break;
-                case R.id.RRHH:
-                    intent = new Intent(MainActivity.this, RRHH.class);
-                    startActivity(intent);
-                    finish();
-                    break;
                 case R.id.ajustes:
                     intent = new Intent(MainActivity.this, Ajustes.class);
                     startActivity(intent);
