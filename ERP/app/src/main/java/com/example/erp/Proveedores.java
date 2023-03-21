@@ -11,10 +11,9 @@ import android.view.MenuItem;
 
 import com.example.erp.clientes.Clientes;
 import com.example.erp.contabilidad.Contabilidad;
-import com.example.erp.proveedores.Proveedores;
 import com.google.android.material.navigation.NavigationView;
 
-public class Ajustes extends AppCompatActivity {
+public class Proveedores extends AppCompatActivity {
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -23,7 +22,7 @@ public class Ajustes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajustes);
+        setContentView(R.layout.activity_proveedores);
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -40,27 +39,27 @@ public class Ajustes extends AppCompatActivity {
             Intent intent;
             switch (id){
                 case R.id.contabilidad:
-                    intent = new Intent(Ajustes.this, Contabilidad.class);
+                    intent = new Intent(Proveedores.this, Contabilidad.class);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.clientes:
-                    intent = new Intent(Ajustes.this, Clientes.class);
+                    intent = new Intent(Proveedores.this, Clientes.class);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.proveedores:
-                    intent = new Intent(Ajustes.this, Proveedores.class);
+                    intent = new Intent(Proveedores.this, Proveedores.class);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.correo_masivo:
-                    intent = new Intent(Ajustes.this, CorreoMasivo.class);
+                    intent = new Intent(Proveedores.this, CorreoMasivo.class);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.ajustes:
-                    intent = new Intent(Ajustes.this, Ajustes.class);
+                    intent = new Intent(Proveedores.this, Ajustes.class);
                     startActivity(intent);
                     finish();
             }

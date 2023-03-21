@@ -86,7 +86,6 @@ public class ModificarCliente extends AppCompatDialogFragment {
 
             Toast.makeText(context, "Cliente actualizado", Toast.LENGTH_LONG).show();
         });
-
         return builder.create();
     }
 

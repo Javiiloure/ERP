@@ -7,7 +7,7 @@
     android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -79,6 +79,7 @@
             android:layout_marginEnd="200dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/atras"
+            android:backgroundTint="@color/naranja"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/adelante"
             app:layout_constraintHorizontal_bias="1.0"
@@ -93,6 +94,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/todo"
             android:src="@drawable/adelante"
+            android:backgroundTint="@color/naranja"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.87"
@@ -117,10 +119,11 @@
             android:id="@+id/servicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="68dp"
             android:text="@string/servicio"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
@@ -128,11 +131,11 @@
             android:id="@+id/direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="36dp"
             android:text="@string/direccion"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -188,8 +191,8 @@
 
         <TextView
             android:id="@+id/mostrar_id"
-            android:layout_width="132dp"
-            android:layout_height="27dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:gravity="center_vertical"
             android:textSize="20sp"
@@ -200,8 +203,8 @@
 
         <TextView
             android:id="@+id/mostrar_nombre"
-            android:layout_width="132dp"
-            android:layout_height="27dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:gravity="center_vertical"
             android:textSize="20sp"
@@ -212,8 +215,8 @@
 
         <TextView
             android:id="@+id/mostrar_telefono"
-            android:layout_width="132dp"
-            android:layout_height="27dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:gravity="center_vertical"
             android:textSize="20sp"
@@ -224,8 +227,8 @@
 
         <TextView
             android:id="@+id/mostrar_email"
-            android:layout_width="132dp"
-            android:layout_height="27dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:gravity="center_vertical"
             android:textSize="20sp"
@@ -236,28 +239,27 @@
 
         <TextView
             android:id="@+id/mostrar_direccion"
-            android:layout_width="132dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/servicio"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
-            app:layout_constraintStart_toEndOf="@+id/direccion"
-            app:layout_constraintTop_toBottomOf="@+id/mostrar_email" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/direccion" />
 
         <TextView
             android:id="@+id/mostrar_servicio"
-            android:layout_width="wrap_content"
-            android:layout_height="27dp"
-            android:gravity="center_vertical"
+            android:layout_width="356dp"
+            android:layout_height="51dp"
+            android:gravity="center"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/servicio"
-            app:layout_constraintVertical_bias="0.171" />
+            app:layout_constraintVertical_bias="0.164" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

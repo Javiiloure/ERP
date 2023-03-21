@@ -34,6 +34,21 @@ public class AdminBD extends SQLiteOpenHelper {
         cv.put("direccion", "Avenida de Madrid 40 4ºE 36214");
         cv.put("servicio", "Empresa de limpieza de todo tipo de instalaciones");
         db.insert("proveedores", null, cv);
+
+        // Creamos tabla de usuarios para la app e insertamos uno de prueba
+        db.execSQL("Create table usuarios(id integer primary key autoincrement, usuario text not null, contraseña text not null)");
+        cv.clear();
+        cv.put("usuario", "prueba");
+        cv.put("contraseña", "prueba");
+        db.insert("usuarios", null, cv);
+
+        // Creamos tabla de gastos
+        db.execSQL("Create table gastos(id integer primary key autoincrement, fecha text, concepto text, importe double)");
+        cv.clear();
+        cv.put("fecha", "15/03/2023");
+        cv.put("concepto", "Compra de maquinas para la sala principal");
+        cv.put("importe", 15000.00);
+        db.insert("gastos", null, cv);
     }
 
     @Override

@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.erp.AdminBD;
 import com.example.erp.Ajustes;
-import com.example.erp.Contabilidad;
+import com.example.erp.contabilidad.Contabilidad;
 import com.example.erp.CorreoMasivo;
 import com.example.erp.R;
 import com.example.erp.clientes.Clientes;

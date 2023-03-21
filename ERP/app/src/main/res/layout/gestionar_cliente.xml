@@ -143,7 +143,7 @@
         android:layout_marginTop="24dp"
         android:hint="@string/introduzca_su_email"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.252"
