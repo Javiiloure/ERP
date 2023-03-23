@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item android:title="@string/contabilidad"
-        android:id="@+id/contabilidad" />
+        android:id="@+id/contabilidad"
+        android:icon="@drawable/contabilidad"
+        />
 
     <item android:title="@string/clientes"
-        android:id="@+id/clientes" />
+        android:id="@+id/clientes"
+        android:icon="@drawable/cliente"
+        />
 
     <item android:title="@string/proveedores"
-        android:id="@+id/proveedores" />
+        android:id="@+id/proveedores"
+        android:icon="@drawable/proveedor"
+        />
 
     <item android:title="@string/correo_masivo"
-        android:id="@+id/correo_masivo" />
+        android:id="@+id/correo_masivo"
+        android:icon="@drawable/correo" />
 
     <item android:title="@string/ajustes"
-        android:id="@+id/ajustes" />
+        android:id="@+id/ajustes"
+        android:icon="@drawable/ajustes"
+        />
 </menu>

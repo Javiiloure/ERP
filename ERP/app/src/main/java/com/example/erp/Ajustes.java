@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.example.erp.clientes.Clientes;
 import com.example.erp.contabilidad.Contabilidad;
@@ -27,14 +28,21 @@ public class Ajustes extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.my_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navigationView = (NavigationView) findViewById(R.id.navigationView);
+        // Cerramos sesion
+        ImageView logout = findViewById(R.id.logout);
+        logout.setOnClickListener(v -> {
+            Intent intent = new Intent(Ajustes.this, Login.class);
+            startActivity(intent);
+            finish();
+        });
 
+        // Controlamos el menu lateral
+        navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             Intent intent;
